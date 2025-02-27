@@ -2,6 +2,8 @@
 
 # [DRiVE: Diffusion-based Rigging Empowers Generation of Versatile and Expressive Characters](https://driveavatar.github.io/)
 
+## CVPR 2025
+
 _**Mingze Sun, Junhao Chen, Junting Dong, Yurun Chen, Xinyu Jiang, Shiwei Mao, Puhua Jiang, Jingbo Wang, Bo Dai, Ruqi Huang**_
 
 <a href='https://arxiv.org/abs/2411.17423'><img src='https://img.shields.io/badge/arXiv-2411.17423-b31b1b.svg'></a>
@@ -12,7 +14,7 @@ _**Mingze Sun, Junhao Chen, Junting Dong, Yurun Chen, Xinyu Jiang, Shiwei Mao, P
 </div>
 
 ## Coming Soon...
-
+🔥2025.02.27, DRiVE has been accepted by CVPR 2025, and the code will be released in the coming weeks, See you in Tennessee, USA🇺🇸.
 
 ## Citation
 
