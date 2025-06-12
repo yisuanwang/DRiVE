@@ -135,7 +135,7 @@ class RayNetwork(nn.Module):
         
         img_features = img_features.repeat(1, xyz_features.shape[1], 1)
 
-        point_features = xyz_features + gaussian_features #+ img_features
+        point_features = xyz_features + gaussian_features + img_features
         # point_features = xyz_features + img_features
         
         

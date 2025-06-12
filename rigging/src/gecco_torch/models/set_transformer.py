@@ -38,7 +38,6 @@ class CrossAttention(nn.Module):
         q, k, v = map(lambda t: rearrange(t, 'b n (h d) -> b h n d', h=h), (q, k, v))
 
         sim = einsum(q, k, 'b h i d, b h j d -> b h i j') * self.scale
-        # attention, what we cannot get enough of
         attn = sim.softmax(dim=-1)
 
         out = einsum(attn, v, 'b h i j, b h j d -> b h i d')
