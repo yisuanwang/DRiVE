@@ -6,9 +6,9 @@ import lightning.pytorch as pl
 from gecco_torch.diffusion import EDMPrecond, Diffusion
 from gecco_torch.reparam import UVLReparam, GaussianReparam
 from gecco_torch.diffusion import Diffusion, LogUniformSchedule, EDMLoss
-from gecco_torch.models.set_transformer_new import SetTransformer
+from gecco_torch.models.set_transformer import SetTransformer
 from gecco_torch.models.feature_pyramid import ConvNeXtExtractor
-from gecco_torch.models.ray_new import RayNetwork
+from gecco_torch.models.ray import RayNetwork
 from gecco_torch.models.activation import GaussianActivation
 from gecco_torch.vis import PCVisCallback
 # from gecco_torch.data.skeleton_cond import TaskonomyDataModule
@@ -17,18 +17,14 @@ from gecco_torch.data.skeleton_test import TaskonomyDataModule
 from gecco_torch.ema import EMACallback
 
 
-
-# train_dataset_path = "/mnt/workspace/project/data/vrm/test_3dgs/"
-# test_dataset_path = "/mnt/workspace/project/data/vrm/test_3dgs/"
-# rgb_dataset_path = "/mnt/workspace/project/data/vrm/rendered_images_4view/"
-train_dataset_path = "/mnt/workspace/project/data/vrm/test_3dgs_demo/"
-test_dataset_path = "/mnt/workspace/project/data/vrm/test_3dgs_demo/"
-rgb_dataset_path = "/mnt/workspace/project/data/vrm/rendered_images_4view/"
+train_dataset_path = "/oss/mingzesun/data/cpfs01/vrm/test_3dgs_demo/"
+test_dataset_path = "/oss/mingzesun/data/cpfs01/vrm/test_3dgs_demo/"
+rgb_dataset_path = "/oss/mingzesun/data/cpfs01/vrm/rendered_images_4view/"
 
 
 NUM_STEPS = 2_000_000
 SAVE_EVERY = 10_000
-BATCH_SIZE = 64 # 48, 64, 16, 36
+BATCH_SIZE = 29 # 48, 64, 16, 36
 epoch_size = None
 num_epochs = NUM_STEPS // SAVE_EVERY
 print(
@@ -77,12 +73,12 @@ data = TaskonomyDataModule(
     train_dataset_path,
     test_dataset_path,
     rgb_dataset_path,
-    n_points=200,
+    n_points=100,
     batch_size=BATCH_SIZE,
     num_workers=16,
     epoch_size=epoch_size,
-    val_size=64, #184, 36
-    # input_type='pcd',
+    val_size=29, #184, 36
+    input_type='v',
 )
 
 
