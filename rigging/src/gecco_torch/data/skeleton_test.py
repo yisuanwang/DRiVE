@@ -13,7 +13,7 @@ import lightning.pytorch as pl
 import timm
 import potpourri3d as pp3d
 
-from transformers import CLIPImageProcessor, CLIPTokenizer, CLIPVisionModelWithProjection
+from transformers import CLIPImageProcessor
 
 from gecco_torch.structs import Context3d, Example
 from gecco_torch.data.samplers import FixedSampler
@@ -41,10 +41,6 @@ class Building:
             self.raw_v_filelist = glob.glob(os.path.join(self.pcd_path, '*_v.txt'))
         
         self.clip_image_processor = CLIPImageProcessor()
-        image_encoder_path = '/mnt/workspace/project/LGM_siga/Real2Character/pcd_diff/gecco/gecco-torch/CLIP/CLIP-ViT-H-14-laion2B-s32B-b79K/'
-        self.clip_image_encoder = CLIPVisionModelWithProjection.from_pretrained(image_encoder_path)
-        self.clip_image_encoder.requires_grad_(False)
-
         self.process()
 
     
@@ -77,7 +73,7 @@ class Building:
         i = 0
         
         if len(self.raw_v_filelist) > 36:            
-            self.raw_v_filelist = self.raw_v_filelist[108:108+36]
+            self.raw_v_filelist = self.raw_v_filelist[:36]
         
         for v_filename in tqdm(self.raw_v_filelist):
             
@@ -91,12 +87,13 @@ class Building:
                 v = np.loadtxt(v_filename)
                 shape_name = v_filename.split('/')[-1].split('_')[0]      
       
-            image_path = os.path.join(self.rgb_path, f'{shape_name}.png')
+            # image_path = os.path.join(self.rgb_path, f'{shape_name}.png')
+            image_path = os.path.join(self.rgb_path, f'{shape_name}', '001.png')
+
             # CLIP single image
             raw_image = Image.open(image_path)
             image = self.clip_image_processor(images=raw_image, return_tensors="pt").pixel_values[0]
     
-            # shape_name = int(shape_name[2:])
             shape_name = int(shape_name)
 
             v = torch.from_numpy(v).float()
