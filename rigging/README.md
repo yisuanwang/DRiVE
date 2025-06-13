@@ -38,13 +38,14 @@ Then, you should obtain:
 
 ## 💡 Citation
 If you find this repo helpful, please give us a 😍 star 😍.
-Please consider citing VistaDream if this program benefits your project
+Please consider citing DRiVE if this program benefits your project
 ```
-@article{wang2024vistadream,
-  title={VistaDream: Sampling multiview consistent images for single-view scene reconstruction},
-  author={Haiping Wang and Yuan Liu and Ziwei Liu and Zhen Dong and Wenping Wang and Bisheng Yang},
-  journal={arXiv preprint arXiv:2410.16892},
-  year={2024}
+@inproceedings{sun2025drive,
+  title={Drive: Diffusion-based rigging empowers generation of versatile and expressive characters},
+  author={Sun, Mingze and Chen, Junhao and Dong, Junting and Chen, Yurun and Jiang, Xinyu and Mao, Shiwei and Jiang, Puhua and Wang, Jingbo and Dai, Bo and Huang, Ruqi},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={21170--21180},
+  year={2025}
 }
 ```
 
