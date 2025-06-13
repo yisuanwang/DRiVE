@@ -23,7 +23,7 @@ The pretrained models of [CLIP](https://github.com/openai/CLIP) can be downloade
 ## 🔦 Demo (Joints Generation from 3DGS)
 Try VistaDream using the following commands:
 ```
-python infer_joints.py
+python example_configs/infer_joints.py
 ```
 Then, you should obtain:
 - ```results/gaussian_pcd/id.ply```: the input 3DGS points;
@@ -31,7 +31,7 @@ Then, you should obtain:
 
 
 ## 🔦 ToDo List
-- [x] Joints generation.
+- [x] Joints generation
 - [ ] Bone connectivity and skinning geneation
 - [ ] Training code
 
