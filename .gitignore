@@ -1,0 +1,32 @@
+# Ignore all .bin files
+*.bin
+*.vrm
+*.zip
+*.fbx
+*.safetensors
+*.pyc
+*.pth
+*.onnx
+*.ckpt
+
+# Ignore specific directories
+demo/
+output-bak/
+output-bak1108/
+dataset/
+datatest/
+baseline/
+pretrain/
+
+LGM/gui.py
+LGM/ICP.py
+LGM/infer-bak.py
+LGM/infer-GT.py
+LGM/infer-Ori.py
+LGM/runbaseline.sh
+LGM/train.sh
+
+# Ignore specific large file
+# path/to/largefile.csv
+*.log
+webui.loganime-segmentation/isnetis.ckpt
