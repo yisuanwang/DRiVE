@@ -21,7 +21,7 @@ We provide pretrained checkpoints [here]
 The pretrained models of [CLIP](https://github.com/openai/CLIP) can be downloaded from hugging face and We use CLIP-ViT-H-14-laion2B-s32B-b79K in our experiments.
 
 ## 🔦 Demo (Joints Generation from 3DGS)
-Try VistaDream using the following commands:
+Try DRiVE using the following commands:
 ```
 python example_configs/infer_joints.py
 ```
