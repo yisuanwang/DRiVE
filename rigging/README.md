@@ -16,7 +16,7 @@ The code has been tested on:
 This package can be installed with pip via pip install path/to/this/repository and used as import gecco_torch. Use pip install -e path/to/this/repository if you want your changes in this repository to be immediately reflected in import locations, otherwise you need to re-install the package after each modification.
 
 ## 🚅 Pretrained model
-We provide pretrained checkpoints [here]
+We provide pretrained checkpoints [here](https://huggingface.co/yisuanwang/DRiVE/tree/main/ckpt)
 
 The pretrained models of [CLIP](https://github.com/openai/CLIP) can be downloaded from hugging face and We use CLIP-ViT-H-14-laion2B-s32B-b79K in our experiments.
 
